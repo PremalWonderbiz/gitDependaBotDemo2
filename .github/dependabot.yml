@@ -3,14 +3,19 @@
 # Please see the documentation for all configuration options:
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 
+# Basic `dependabot.yml` file for cronjob
+
 version: 2
 updates:
-  - package-ecosystem: npm # See documentation for possible values
-    directory: "/" # Location of package manifests
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    # Check the npm registry for updates based on `cronjob` value
     schedule:
       interval: "cron"
-      cron: "0 9 * * *"   # every day at 9 AM IST
-    open-pull-requests-limit: 10
+      cronjob: "0 9 * * *"
+    open-pull-requests-limit: 10A
     commit-message:
       prefix: "Chore"
       include: "scope"
