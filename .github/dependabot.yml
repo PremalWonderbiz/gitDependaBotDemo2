@@ -15,7 +15,7 @@ updates:
     schedule:
       interval: "cron"
       cronjob: "0 9 * * *"
-    open-pull-requests-limit: 10A
+    open-pull-requests-limit: 10
     commit-message:
       prefix: "Chore"
       include: "scope"
